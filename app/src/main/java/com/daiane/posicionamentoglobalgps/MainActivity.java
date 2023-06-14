@@ -47,8 +47,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        mLocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocListener);
-         if (mLocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+        mLocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mLocListener);
+        //mLocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocListener);
+        if (mLocManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+        // if (mLocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
              String texto = "Latitude: " + MinhaLocalizacaoListener.latitude + "\n" +
                      "Longitude: " + MinhaLocalizacaoListener.longitude + "\n";
              Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG).show();
